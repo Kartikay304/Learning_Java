@@ -20,19 +20,21 @@ public class P4_Task03_ScannerClassInJava {
 
 	public static void main(String[] args) {
 		Scanner myObj1 = new Scanner(System.in); // Create a Scanner Object
-		Scanner myObj2 = new Scanner(System.in);
+// 		Scanner myObj2 = new Scanner(System.in);
 		
 		//Read the First-Token(_space bar)
 		String firstName=myObj1.next();
 		System.out.println("Name is: "+firstName+"\n");
 		
-		String name1 = myObj2.nextLine(); // (\n)
-		String name2 = myObj2.nextLine(); // (\n)
+		myObj1.nextLine(); // As next() doesn't read '\n' new line character the nextLine() in line 31 reads the previous newline and thus don't give a chance to enter the input
+		
+		String name1 = myObj1.nextLine(); // (\n)
+		String name2 = myObj1.nextLine(); // (\n)
 		
 		System.out.println("Name is: "+name1+"\n");
 		System.out.println("Name is: "+name2+"\n");
 		
-		boolean b=myObj2.nextBoolean();
+		boolean b=myObj1.nextBoolean();
 		System.out.println(b +"\n");
 		
 		myObj1.close();
