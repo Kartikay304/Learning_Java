@@ -2,6 +2,13 @@ package unit_03;
 
 import java.util.Scanner;
 
+/*
+   Finally always run , it lets you execute the code after try and catch block
+   Regardless of the result
+   It will always run wether exception is catched or not.
+   It will always run wether exception occur or not.
+*/
+
 public class P14_ExceptionHandingInJava {
 
 	public static void main(String[] args) {
