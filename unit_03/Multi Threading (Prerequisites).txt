@@ -1,0 +1,25 @@
+Prerequsites of Multi Threading  - 
+
+1. Multi Processing 
+2. Multi tasking -  when your process is divided into further tasks so as to reduce the load in your system called multi tasking. This is done by your OS.
+These sub tasks are also executed concurrently by switching between the tasks. The tasks are written in different threads.
+
+Types if mutli processing and Multi tasking - 
+	1. Sequential  
+	2. Parallel 
+	3. Concurrent 
+
+Sequential - it is the worst processing method. When you have only one core (that is only one Program counter).
+
+Parallel - only possible when you have multiple cores in your system. Multiple instructions are processed simultaneously.
+
+Concurrent - very close to parallel processing. By making threads, we can achieve this. We execute small fraction of each process and switch between them 
+making execution speed fucking high. Context Switch is done by OS. 
+
+
+(If your tasks that are to be executed are sequential then you cannot apply multi threading into it because it is fucking not possible)
+
+Cohesion - when modules are independent of each other.
+
+
+
