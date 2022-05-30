@@ -67,7 +67,7 @@ class FileHandling{
 		}
 		
 		BufferedWriter f_writer = new BufferedWriter(myobj);
-		String text = "Duniya MADARCHOD h !";
+		String text = "Life is fun !";
 		
 		f_writer.write(text);
 		f_writer.close();
