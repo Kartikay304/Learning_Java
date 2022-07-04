@@ -1,0 +1,74 @@
+package practice;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class Wholeseller_Retailer_awt {
+	public static void main(String[] args) {
+		Customer_awt obj = new Customer_awt();
+	}
+}
+
+class Customer_awt extends JFrame {
+	JTextField t1;
+	JRadioButton r1,r2,r3;
+	JLabel l1,l2,l3;
+	JButton b1;
+	Customer_awt() {
+		t1 = new JTextField(20);
+		b1 = new JButton("Calculate Cost");
+		r1 = new JRadioButton("Wholesale");
+		r2 = new JRadioButton("Retailer");
+		r3 = new JRadioButton("Special Discount");
+		l1 = new JLabel("Unit Ordered");
+		l2 = new JLabel("Total cost in rupees");
+		l3 = new JLabel();
+		add(l1);
+		add(t1);
+		add(r1);
+		add(r2);
+		add(r3);
+		add(b1);
+		add(l2);
+		add(l3);
+		
+		ActionListener al = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int a = Integer.parseInt(t1.getText());
+				if(r1.isSelected()) {
+					Float cost;
+					if(a<=15) cost = (float)(a*50);
+					else if(a>=16 && a<=20) cost = (float)a*45;
+					else if(a>=21 && a<=30) cost = (float)a*40;
+					else if(a>=31 && a<=50) cost = (float)a*35;
+					else cost = (float)a*30;
+					if(r3.isSelected()) cost = cost*1/10;
+					if(e.getSource() == b1) l3.setText(cost.toString());
+				}
+				if(r2.isSelected()) {
+					Float cost;
+					if(a<=15) cost = (float)a*60;
+					else if(a>=16 && a<=20) cost = (float)a*55;
+					else if(a>=21 && a<=30) cost = (float)a*50;
+					else if(a>=31 && a<=50) cost = (float)a*45;
+					else cost = (float)a*40;
+					if(r3.isSelected()) cost = cost*1/10;
+					if(e.getSource() == b1) l3.setText(cost.toString());
+				}
+
+			}
+		};
+		r1.addActionListener(al);
+		r2.addActionListener(al);
+		r3.addActionListener(al);
+		b1.addActionListener(al);
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(520,520);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}
