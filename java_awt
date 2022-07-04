@@ -1,0 +1,68 @@
+package practice;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class java_awt {
+
+	public static void main(String[] args) {
+		sampleAwt obj = new sampleAwt();
+	}
+}
+class sampleAwt extends JFrame {
+	JTextField t1,t2;
+	JButton r1,r2,r3,r4;
+	JLabel ll;
+	sampleAwt() {
+		t1 = new JTextField(20);
+		t2 = new JTextField(20);
+		r1 = new JButton("Sum");
+		r2 = new JButton("Sub");
+		r3 = new JButton("Mul");
+		r4 = new JButton("Div");
+		ll = new JLabel("Result");
+		add(t1);
+		add(t2);
+		add(r1);
+		add(r2);
+		add(r3);
+		add(r4);
+		add(ll);
+		
+		ActionListener al = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int a1 = Integer.parseInt(t1.getText());
+				int a2 = Integer.parseInt(t2.getText());
+				if(e.getSource()==r1) {
+					Integer sum = a1+a2;
+					ll.setText(sum.toString());
+				}
+				if(e.getSource()==r2) {
+					Integer sub = a1-a2;
+					ll.setText(sub.toString());
+				}
+				if(e.getSource()==r3) {
+					Integer mul = a1*a2;
+					ll.setText(mul.toString());
+				}
+				if(e.getSource()==r4) {
+					Integer div = a1/a2;
+					ll.setText(div.toString());
+				}
+			}
+		};
+		r1.addActionListener(al);
+		r2.addActionListener(al);
+		r3.addActionListener(al);
+		r4.addActionListener(al);
+		
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(520,520);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}
