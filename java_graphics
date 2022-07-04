@@ -1,0 +1,37 @@
+package practice;
+import java.awt.*;
+import javax.swing.JFrame;
+  
+public class DisplayGraphics{  
+      
+        public static void main(String[] args) {  
+        canvas_java obj=new canvas_java();  
+        JFrame f=new JFrame();  
+        f.add(obj);  
+        f.setSize(400,400);   
+        f.setVisible(true);  
+    }  
+}
+class canvas_java extends Canvas {
+	 public void paint(Graphics g) {  
+//       g.drawString("Hello",40,40);  
+//       setBackground(Color.WHITE);  
+//       g.fillRect(130, 30,100, 80);  
+//       g.drawOval(30,130,50, 60);  
+       setForeground(Color.RED);  
+//       g.fillOval(130,130,50, 60);  
+//       g.drawArc(30, 200, 40,50,90,60);  
+//       g.fillArc(30, 130, 40,50,180,40);  
+//   	g.drawOval(150, 150, 70, 80);
+//   	g.fillOval(160, 180, 10, 10);
+//   	g.fillOval(200, 180, 10, 10);
+//   	g.drawRect(185,190,0,15);
+//   	g.drawArc(150,140,70,80,210,120);
+   	g.fillRect(100, 50, 30, 30);
+   	g.fillRect(150, 50, 30, 30);
+   	g.drawRect(140, 90, 0,30);
+   	g.drawArc(100, 100, 80, 40, 210, 120);
+   	g.drawOval(70, 20, 140, 140);
+         
+   }  
+}
